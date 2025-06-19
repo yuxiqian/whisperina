@@ -1,0 +1,15 @@
+# Cache files
+.parcel-cache/**
+node_modules/**
+package-lock.json
+
+# Bundle it for local debugging only
+*.iinaplgz
+
+# Will commit the distributed binaries later
+dist/**
+
+.idea/**
+
+# macOS Garbage
+.DS_Store

@@ -1,0 +1,21 @@
+{
+  "name": "AI Subtitle Generator",
+  "identifier": "io.github.yuxiqian.iina-ai-subgen",
+  "version": "0.0.1",
+  "description": "An IINA plugin that generates subtitles with AI models",
+  "author": {
+    "name": "yux",
+    "email": "kono.yux@outlook.com",
+    "url": "https://github.com/yuxiqian"
+  },
+  "entry": "dist/index.js",
+  "global": "dist/global.js",
+  "permissions": [
+    "show-osd",
+    "file-system",
+    "network-request"
+  ],
+  "allowedDomains": ["*"],
+  "preferencesPage": "pref.html",
+  "preferenceDefaults": {}
+}
