@@ -7,9 +7,6 @@ package-lock.json
 *.iinaplgz
 models
 
-# Will commit the distributed binaries later
-dist/**
-
 .idea/**
 
 # macOS Garbage
