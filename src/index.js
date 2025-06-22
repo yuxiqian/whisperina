@@ -1,9 +1,7 @@
 import {MODELS} from "./models";
 import {transcribe} from "./transcribe";
 
-const {
-    subtitle,utils
-} = iina;
+const { subtitle } = iina;
 
 subtitle.registerProvider("whisper", {
     search: async () => MODELS.map(model => subtitle.item({
@@ -11,6 +9,6 @@ subtitle.registerProvider("whisper", {
     })), description: (item) => ({
         name: item.data.id, left: item.data.size, right: item.data.sha,
     }), download: async (item) => {
-        return Promise.resolve(transcribe('??', item.data.id));
+        return Promise.resolve(transcribe(item.data.id));
     },
 });

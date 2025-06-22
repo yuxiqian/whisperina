@@ -4,7 +4,7 @@ const {console, core, file, utils} = iina;
 
 const HOME_PATH = '~/Library/Application Support/com.colliderli.iina/plugins/';
 
-export async function transcribe(path, model) {
+export async function transcribe(model) {
     await downloadOrGetModel(model);
     const url = core.status.url;
     if (!url.startsWith("file://")) {
