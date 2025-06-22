@@ -9,7 +9,7 @@
     "url": "https://github.com/yuxiqian"
   },
   "entry": "dist/index.js",
-  "global": "dist/global.js",
+  "globalEntry": "dist/global.js",
   "permissions": [
     "show-osd",
     "file-system",

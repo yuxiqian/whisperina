@@ -5,6 +5,7 @@ package-lock.json
 
 # Bundle it for local debugging only
 *.iinaplgz
+models
 
 # Will commit the distributed binaries later
 dist/**
