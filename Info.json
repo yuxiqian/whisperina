@@ -17,5 +17,11 @@
   ],
   "allowedDomains": ["*"],
   "preferencesPage": "pref.html",
-  "preferenceDefaults": {}
+  "preferenceDefaults": {},
+  "subtitleProviders": [
+    {
+      "id": "whisper",
+      "name": "Whisper AI"
+    }
+  ]
 }

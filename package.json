@@ -17,7 +17,8 @@
   },
   "dependencies": {
     "parcel": "^2.8.3",
-    "parcel-optimizer-webview": "git+https://github.com/iina/parcel-optimizer-webview.git"
+    "parcel-optimizer-webview": "git+https://github.com/iina/parcel-optimizer-webview.git",
+    "shell-quote": "^1.8.3"
   },
   "browserslist": "safari >= 9",
   "entry": "src/index.js",
