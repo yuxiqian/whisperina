@@ -2,6 +2,8 @@
   "name": "AI Subtitle Generator",
   "identifier": "io.github.yuxiqian.whisperina",
   "version": "0.0.1",
+  "ghRepo": "yuxiqian/whisperina",
+  "ghVersion": 1,
   "description": "An IINA plugin that generates subtitles with AI models",
   "author": {
     "name": "yux",
