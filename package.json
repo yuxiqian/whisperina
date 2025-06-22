@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "rm -rf dist && rm -rf bin && ./compile-whisper-cpp.sh && parcel build ."
+    "build": "rm -rf dist && rm -rf bin && ./compile-whisper-cpp.sh && parcel build .",
+    "test": "./test.sh"
   },
   "author": "",
   "license": "MIT",

@@ -9,8 +9,9 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
-        macos-version: [macos-12, macos-13, macos-14]
+        macos-version: [macos-13, macos-14, macos-15]
         node-version: [22.x]
     runs-on: ${{ matrix.macos-version }}
     steps:
@@ -25,3 +26,4 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm run build
+      - run: npm run test
