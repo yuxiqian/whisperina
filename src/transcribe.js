@@ -51,7 +51,7 @@ function getFfmpegPath() {
 }
 
 function getPluginHomePath() {
-    const PLUGIN_NAME = 'whisperina.iinaplugin';
+    const PLUGIN_NAME = 'io.github.yuxiqian.whisperina.iinaplugin';
     const PLUGIN_NAME_DEV = 'whisperina.iinaplugin-dev';
     if (utils.fileInPath(HOME_PATH + PLUGIN_NAME)) {
         return utils.resolvePath(HOME_PATH + PLUGIN_NAME);
