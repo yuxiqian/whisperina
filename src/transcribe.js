@@ -1,4 +1,4 @@
-const {console, core, utils} = iina;
+const {console, core, preferences, utils} = iina;
 
 const HOME_PATH = '~/Library/Application Support/com.colliderli.iina/plugins/';
 
@@ -41,17 +41,17 @@ async function transcribeAudio(tempWavName, modelName) {
 }
 
 function getWhisperCliPath() {
-    const whisperCliPath = "/opt/homebrew/bin/whisper-cli";
+    const whisperCliPath = preferences.get("wcli_path");
     if (!utils.fileInPath(whisperCliPath)) {
-        throw new Error(`Unable to locate Whisper CLI executable at: ${whisperCliPath}`);
+        throw new Error(`Unable to locate Whisper CLI executable at: ${whisperCliPath}. Check the preference page for more details.`);
     }
     return whisperCliPath;
 }
 
 function getFfmpegPath() {
-    const ffmpegPath = "/opt/homebrew/bin/ffmpeg";
+    const ffmpegPath = preferences.get("ffmpeg_path");
     if (!utils.fileInPath(ffmpegPath)) {
-        throw new Error(`Unable to locate ffmpeg executable at: ${ffmpegPath}`);
+        throw new Error(`Unable to locate ffmpeg executable at: ${ffmpegPath}. Check the preference page for more details.`);
     }
     return ffmpegPath;
 }

@@ -1,9 +1,9 @@
 {
   "name": "Whisperina",
   "identifier": "io.github.yuxiqian.whisperina",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "ghRepo": "yuxiqian/whisperina",
-  "ghVersion": 2,
+  "ghVersion": 3,
   "description": "An IINA plugin that generates subtitles with OpenAI Whisper Models",
   "author": {
     "name": "yux",
