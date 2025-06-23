@@ -1,6 +1,4 @@
-import {quote} from "shell-quote";
-
-const {console, core, file, utils} = iina;
+const {console, core, utils} = iina;
 
 const HOME_PATH = '~/Library/Application Support/com.colliderli.iina/plugins/';
 
@@ -39,7 +37,15 @@ async function generateTemporaryWaveFiles(fileName) {
 }
 
 async function transcribeAudio(tempWavName, modelName) {
-    await execWrapped('/bin/bash', ['-c', `DYLD_LIBRARY_PATH='${utils.resolvePath(HOME + '/bin')}' ` + quote([utils.resolvePath(`${HOME}/bin/whisper-cli`), '-f', tempWavName, '-m', `${DATA}/ggml-${modelName}.bin`, '-osrt'])]);
+    await execWrapped(getWhisperCliPath(), ['-f', tempWavName, '-m', `${DATA}/ggml-${modelName}.bin`, '-osrt']);
+}
+
+function getWhisperCliPath() {
+    const whisperCliPath = "/opt/homebrew/bin/whisper-cli";
+    if (!utils.fileInPath(whisperCliPath)) {
+        throw new Error(`Unable to locate Whisper CLI executable at: ${whisperCliPath}`);
+    }
+    return whisperCliPath;
 }
 
 function getFfmpegPath() {

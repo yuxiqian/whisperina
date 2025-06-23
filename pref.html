@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Preferences</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 16px;
+      margin: 0;
+      font-size: 13px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    small,
+    .small {
+      font-size: 11px;
+    }
+
+    .secondary {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .pref-section {
+      margin-bottom: 12px;
+    }
+
+    .pref-help {
+      margin-top: 2px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="pref-section">
+  FFmpeg CLI Path:
+  <p class="small secondary pref-help">
+    Provide the absolute path to the <code>ffmpeg</code> binary. You may run <code>brew install ffmpeg</code> to install it.
+    <br>
+    If you are using Homebrew, the path is usually <code>/opt/homebrew/bin/ffmpeg</code> for Apple Sillion Macs and
+    <code>/usr/local/bin/ffmpeg</code> for Intel Macs.
+  </p>
+  <div style="margin-top: 2px">
+    <input type="text" data-pref-key="ffmpeg_path" style="width: 100%; margin-top: 2px" list="ffmpegPathList" />
+    <datalist id="ffmpegPathList">
+      <option value="/opt/homebrew/bin/ffmpeg">
+      <option value="/usr/local/bin/ffmpeg">
+    </datalist>
+  </div>
+</div>
+
+<div class="pref-section">
+  Whisper.cpp CLI Path:
+  <p class="small secondary pref-help">
+    Provide the absolute path to the <code>whisper-cli</code> binary. You may run <code>brew install whisper-cpp</code> to install it.
+    <br>
+    If you are using Homebrew, the path is usually <code>/opt/homebrew/bin/whisper-cli</code> for Apple Sillion Macs and
+    <code>/usr/local/bin/whisper-cli</code> for Intel Macs.
+  </p>
+  <div style="margin-top: 2px">
+    <input type="text" data-pref-key="wcli_path" style="width: 100%; margin-top: 2px" list="whisperCliPathList" />
+    <datalist id="whisperCliPathList">
+      <option value="/opt/homebrew/bin/whisper-cli">
+      <option value="/usr/local/bin/whisper-cli">
+    </datalist>
+  </div>
+</div>
+
+<div class="pref-section">
+  <label>
+    Show these models as candidates:
+  </label>
+  <p class="small secondary pref-help">
+    Only activated models will be shown in the subtitle choosing OSD.
+  </p>
+  <p style="margin-top: 4px">
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_tiny" />
+      <code>tiny</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_tiny_en" />
+      <code>tiny.en</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_base" />
+      <code>base</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_base_en" />
+      <code>base.en</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_small" />
+      <code>small</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_small_en" />
+      <code>small.en</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_small_en_tdrz" />
+      <code>small.en-tdrz</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_medium" />
+      <code>medium</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_medium_en" />
+      <code>medium.en</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v1" />
+      <code>large-v1</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v2" />
+      <code>large-v2</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v2_q5_0" />
+      <code>large-v2-q5_0</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v3" />
+      <code>large-v3</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v3_q5_0" />
+      <code>large-v3-q5_0</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v3_turbo" />
+      <code>large-v3-turbo</code>
+    </label>
+    <label>
+      <input type="checkbox" data-type="bool" data-pref-key="show_large_v3_turbo_q5_0" />
+      <code>large-v3-turbo-q5_0</code>
+    </label>
+  </p>
+</div>
+
+<div>
+  <label>
+    <input type="checkbox" data-type="bool" data-pref-key="try_ytdl_first" />
+    Try youtube-dl first
+  </label>
+</div>
+
+<div class="pref-section">
+  Default video and audio quality:
+  <div style="margin-top: 4px; line-height: 24px">
+    <div>
+      <label><input type="radio" name="video_quality" value="best" data-pref-key />
+        Best video and audio</label>
+    </div>
+    <div>
+      <label><input type="radio" name="video_quality" value="use_max" data-pref-key />
+        Video not larger than:</label>
+      <input type="number" data-pref-key="max_video_height" style="width: 4em" />
+      p
+    </div>
+    <div>
+      <label><input type="radio" name="video_quality" value="custom" data-pref-key />
+        Custom youtube-dl format:</label>
+      <input type="text" data-pref-key="custom_ytdl_format" />
+    </div>
+  </div>
+</div>
+<div class="pref-section">
+  <label>
+    Excluded URLs:
+    <div style="margin-top: 2px">
+      <input type="text" data-pref-key="excluded_urls" style="width: 100%; margin-top: 2px" />
+    </div>
+  </label>
+</div>
+<div class="pref-section">
+  <label>
+    <input type="checkbox" data-type="bool" data-pref-key="include_subs" />
+    Include subtitles
+  </label>
+  <div style="margin-top: 4px;"></div>
+  <label style="margin-left: 16px;">
+    <input type="checkbox" data-type="bool" data-pref-key="include_auto_subs" />
+    Also include auto-generated subtitles
+  </label>
+</div>
+<div class="pref-section">
+  <label>
+    <input type="checkbox" data-type="bool" data-pref-key="try_ytdl_first" />
+    Try youtube-dl first
+  </label>
+  <p class="small secondary pref-help">
+    Try parsing the URL with youtube-dl first, instead of the default where
+    it's only after mpv failed to open it.
+  </p>
+</div>
+<div class="pref-section">
+  <label>
+    <input type="checkbox" data-type="bool" data-pref-key="use_manifest" />
+    Use manifest URL
+  </label>
+  <p class="small secondary pref-help">
+    Use the master manifest URL for formats like HLS and DASH, if available,
+    allowing for video/audio selection at runtime.
+  </p>
+</div>
+<div class="pref-section">
+  <label>
+    Raw options:
+    <input type="text" data-pref-key="raw_options" autocomplete="off" autocorrect="off" autocapitalize="off"
+           spellcheck="false" style="width: 100%; margin-top: 2px" />
+  </label>
+  <p class="small secondary pref-help">
+    Additional raw options to pass to youtube-dl/yt-dlp, for example:<br>
+    <code>--write-auto-sub --sub-langs en</code>
+  </p>
+</div>
+</body>
+
+</html>

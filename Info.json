@@ -1,10 +1,10 @@
 {
-  "name": "AI Subtitle Generator",
+  "name": "Whisperina",
   "identifier": "io.github.yuxiqian.whisperina",
   "version": "0.0.1",
   "ghRepo": "yuxiqian/whisperina",
   "ghVersion": 1,
-  "description": "An IINA plugin that generates subtitles with AI models",
+  "description": "An IINA plugin that generates subtitles with OpenAI Whisper Models",
   "author": {
     "name": "yux",
     "email": "kono.yux@outlook.com",
@@ -19,7 +19,26 @@
   ],
   "allowedDomains": ["*"],
   "preferencesPage": "pref.html",
-  "preferenceDefaults": {},
+  "preferenceDefaults": {
+    "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+    "wcli_path": "/opt/homebrew/bin/whisper-cli",
+    "show_tiny": true,
+    "show_tiny_en": true,
+    "show_base": true,
+    "show_base_en": true,
+    "show_small": true,
+    "show_small_en": true,
+    "show_small_en_tdrz": true,
+    "show_medium": true,
+    "show_medium_en": true,
+    "show_large_v1": true,
+    "show_large_v2": true,
+    "show_large_v2_q5_0": true,
+    "show_large_v3": true,
+    "show_large_v3_q5_0": true,
+    "show_large_v3_turbo": true,
+    "show_large_v3_turbo_q5_0": true
+  },
   "subtitleProviders": [
     {
       "id": "whisper",
