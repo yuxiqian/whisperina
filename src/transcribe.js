@@ -23,7 +23,7 @@ async function downloadOrGetModel(model) {
     if (utils.fileInPath(`@data/ggml-${model}.bin`)) {
         core.osd(`Model ${model} already exists.`);
     } else if (utils.ask(`Model ${model} does not exist. Would you like to download it now?`)) {
-        await utils.exec(`${HOME}/bin/download-ggml-model.sh`, [model], DATA).catch(error => console.error(error));
+        await execWrapped(`${HOME}/bin/download-ggml-model.sh`, [model], DATA);
         core.osd(`Model ${model} has been successfully downloaded.`);
     } else {
         throw Error(`No such model ${model}.`);
