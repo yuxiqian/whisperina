@@ -82,7 +82,7 @@
 
 <div class="pref-section">
   <label>
-    Show these models as candidates:
+    Activated models:
   </label>
   <p class="small secondary pref-help">
     Only activated models will be shown in the subtitle choosing OSD.
@@ -152,84 +152,6 @@
       <input type="checkbox" data-type="bool" data-pref-key="show_large_v3_turbo_q5_0" />
       <code>large-v3-turbo-q5_0</code>
     </label>
-  </p>
-</div>
-
-<div>
-  <label>
-    <input type="checkbox" data-type="bool" data-pref-key="try_ytdl_first" />
-    Try youtube-dl first
-  </label>
-</div>
-
-<div class="pref-section">
-  Default video and audio quality:
-  <div style="margin-top: 4px; line-height: 24px">
-    <div>
-      <label><input type="radio" name="video_quality" value="best" data-pref-key />
-        Best video and audio</label>
-    </div>
-    <div>
-      <label><input type="radio" name="video_quality" value="use_max" data-pref-key />
-        Video not larger than:</label>
-      <input type="number" data-pref-key="max_video_height" style="width: 4em" />
-      p
-    </div>
-    <div>
-      <label><input type="radio" name="video_quality" value="custom" data-pref-key />
-        Custom youtube-dl format:</label>
-      <input type="text" data-pref-key="custom_ytdl_format" />
-    </div>
-  </div>
-</div>
-<div class="pref-section">
-  <label>
-    Excluded URLs:
-    <div style="margin-top: 2px">
-      <input type="text" data-pref-key="excluded_urls" style="width: 100%; margin-top: 2px" />
-    </div>
-  </label>
-</div>
-<div class="pref-section">
-  <label>
-    <input type="checkbox" data-type="bool" data-pref-key="include_subs" />
-    Include subtitles
-  </label>
-  <div style="margin-top: 4px;"></div>
-  <label style="margin-left: 16px;">
-    <input type="checkbox" data-type="bool" data-pref-key="include_auto_subs" />
-    Also include auto-generated subtitles
-  </label>
-</div>
-<div class="pref-section">
-  <label>
-    <input type="checkbox" data-type="bool" data-pref-key="try_ytdl_first" />
-    Try youtube-dl first
-  </label>
-  <p class="small secondary pref-help">
-    Try parsing the URL with youtube-dl first, instead of the default where
-    it's only after mpv failed to open it.
-  </p>
-</div>
-<div class="pref-section">
-  <label>
-    <input type="checkbox" data-type="bool" data-pref-key="use_manifest" />
-    Use manifest URL
-  </label>
-  <p class="small secondary pref-help">
-    Use the master manifest URL for formats like HLS and DASH, if available,
-    allowing for video/audio selection at runtime.
-  </p>
-</div>
-<div class="pref-section">
-  <label>
-    Raw options:
-    <input type="text" data-pref-key="raw_options" autocomplete="off" autocorrect="off" autocapitalize="off"
-           spellcheck="false" style="width: 100%; margin-top: 2px" />
-  </label>
-  <p class="small secondary pref-help">
-    Additional raw options to pass to youtube-dl/yt-dlp, for example:<br>
-    <code>--write-auto-sub --sub-langs en</code>
   </p>
 </div>
 </body>
