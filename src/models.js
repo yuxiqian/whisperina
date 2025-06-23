@@ -1,4 +1,4 @@
-const { preferences } = iina;
+const {preferences} = iina;
 
 const MODELS = [{
     name: 'tiny', size: '75 MiB', sha: 'bd577a113a864445d4c299885e0cb97d4ba92b5f'
@@ -34,10 +34,6 @@ const MODELS = [{
     name: 'large-v3-turbo-q5_0', size: '547 MiB', sha: 'e050f7970618a659205450ad97eb95a18d69c9ee'
 }]
 
-export const listModels = function() {
-    return MODELS.filter(model => {
-        preferences.get('show_' +
-            model.name.replaceAll(/[-.]/g, '_')
-        )
-    })
+export const listModels = function () {
+    return MODELS.filter(model => preferences.get('show_' + model.name.replaceAll(/[-.]/g, '_')))
 }
