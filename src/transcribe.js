@@ -47,8 +47,9 @@ function appendOptions(options) {
             return options.concat(extras);
         }
     } catch (error) {
-        return options;
+        // Ignore
     }
+    return options;
 }
 
 function getWhisperCliPath() {
