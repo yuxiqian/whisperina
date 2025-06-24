@@ -1,5 +1,3 @@
-import {parse} from "shell-quote";
-
 const {console, core, preferences, utils} = iina;
 
 const HOME_PATH = '~/Library/Application Support/com.colliderli.iina/plugins/';
@@ -39,7 +37,18 @@ async function generateTemporaryWaveFiles(fileName) {
 }
 
 async function transcribeAudio(tempWavName, modelName) {
-    await execWrapped(getWhisperCliPath(), ['-f', tempWavName, '-m', `${DATA}/ggml-${modelName}.bin`, '-osrt'].concat(parse(preferences.get("wcli_options"))));
+    await execWrapped(getWhisperCliPath(), appendOptions(['-f', tempWavName, '-m', `${DATA}/ggml-${modelName}.bin`, '-osrt']));
+}
+
+function appendOptions(options) {
+    try {
+        const extras = preferences.get("wcli_options")
+        if (extras && extras.length > 0) {
+            return options.concat(extras);
+        }
+    } catch (error) {
+        return options;
+    }
 }
 
 function getWhisperCliPath() {
