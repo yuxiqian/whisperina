@@ -1,3 +1,5 @@
+import {parse} from "shell-quote";
+
 const {console, core, preferences, utils} = iina;
 
 const HOME_PATH = '~/Library/Application Support/com.colliderli.iina/plugins/';
@@ -37,7 +39,7 @@ async function generateTemporaryWaveFiles(fileName) {
 }
 
 async function transcribeAudio(tempWavName, modelName) {
-    await execWrapped(getWhisperCliPath(), ['-f', tempWavName, '-m', `${DATA}/ggml-${modelName}.bin`, '-osrt']);
+    await execWrapped(getWhisperCliPath(), ['-f', tempWavName, '-m', `${DATA}/ggml-${modelName}.bin`, '-osrt'].concat(parse(preferences.get("wcli_options"))));
 }
 
 function getWhisperCliPath() {
@@ -64,7 +66,7 @@ function getPluginHomePath() {
     } else if (utils.fileInPath(HOME_PATH + PLUGIN_NAME_DEV)) {
         return utils.resolvePath(HOME_PATH + PLUGIN_NAME_DEV);
     } else {
-        throw new Error("Unable to allocate plugin folder.");
+        throw new Error("Unable to locate plugin folder.");
     }
 }
 

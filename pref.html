@@ -84,9 +84,6 @@
   <label>
     Activated models:
   </label>
-  <p class="small secondary pref-help">
-    Only these models will be shown in the subtitle choosing OSD.
-  </p>
   <p style="margin-top: 4px">
     <label>
       <input type="checkbox" data-type="bool" data-pref-key="show_tiny" />
@@ -183,7 +180,20 @@
       <code>large-v3-turbo-q5_0</code>
     </label>
   </p>
+  <p class="small secondary pref-help">
+    Only selected models will be shown in the subtitle choosing OSD.
+  </p>
+</div>
+
+<div class="pref-section">
+  Extra Whisper CLI Options:
+  <p class="small secondary pref-help">
+    These options will be passed to <code>whisper-cli</code> directly.
+    <a href="https://github.com/ggml-org/whisper.cpp/tree/master/examples/cli">Docs</a>
+  </p>
+  <div style="margin-top: 2px">
+    <input type="text" data-pref-key="wcli_options" style="width: 100%; margin-top: 2px" />
+  </div>
 </div>
 </body>
-
 </html>
