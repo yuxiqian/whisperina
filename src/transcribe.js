@@ -1,3 +1,5 @@
+import {parse} from "shell-quote";
+
 const {console, core, preferences, utils} = iina;
 
 const HOME_PATH = '~/Library/Application Support/com.colliderli.iina/plugins/';
@@ -42,7 +44,7 @@ async function transcribeAudio(tempWavName, modelName) {
 
 function appendOptions(options) {
     try {
-        const extras = preferences.get("wcli_options")
+        const extras = parse(preferences.get("wcli_options"));
         if (extras && extras.length > 0) {
             return options.concat(extras);
         }
